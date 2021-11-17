@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Case Study 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="Index.css">
+
+<body>
+  <h1 id="title_1">Bike Case Study</h1>
+  <br>
+    <p id=par_0>
+        By: Michael Kelly
+    </p>
+  <br>
+    <ul id="list_1">
+        <li>Firm: Cyclistic</li>
+        <li>Location: Chicago</li>
+        <li>Director: Moreno</li>
+        <li>Position: Junior Data Analyst</li>
+        <li>Department: Marketing Analyst Team</li>
+    </ul>
+    <br>
+        <p id="title_2">Business Task:</p>
+        <br>
+        <p id="par_1">How do annual members and casual riders use Cyclistic bikes diﬀerently?</p>
+    <br>
+  <p id="title_2"><b>Intro:</b></p>
+    <p id="par_2">For this study I will be analyzing data from Cyclystic, a pseudo firm based in Chicago.  We use a publicly updated data set from Divvy - Motivate international Inc.  The purpose of this study is to provide solutions to maximize the number of annual memberships by identifying ways to increase the number of paid subscription members.</p>
+    <br>
+  <p id="title_3"><b>Problems:</b></p>
+    <p id="par_3">For this study we used data provided from Divvy bikes rides over a one-year period.  I chose to use the most up to date monthly data at the time from August 2020 – September 2021.  The first problem I had to address was the data itself and deciding how to analyze it.  For this case study I decided to use R with its wide array of packages and ease of use.
+    </p>
+    <br>
+    <p id="par_4">
+        My file directory is broken down between the different steps of the data analysis process.  The preparation phase mainly involves importing the data and binding it.  For the process step, I clean the data.  This involves creating new columns, formatting dates, and converting numeric ride data.
+    </p>
+    <br>
+    <p id="par_5">
+        In the analysis phase, I create several graphs and tables below to provide insight into user patterns.  I did drop NA values for data that does not have station names.  Of that 50/50 are roughly member and causal, and most of the bikes were electric.
+    </p>
+    <br>
+    <p id="par_6">There are several limitations to the data and pre-cleaned items to be noted:</p>
+    <br>
+    <ul id="List_1">
+        <li>There is no credit information or GPS data, making it hard to identify duplicate accounts and rides   </li>
+        <li>If bikes are incorrectly docked at a station, the trip time may still run</li>
+        <li>The data does not account for trips less than 60 seconds</li>
+        <li>The servicing time for bicycles is not included</li>
+        <li>Employee rides are not tracked</li>
+        <li>Docked is considered as the status of the bike in the docking station.  Both types of bicycles can be docked, and they are usually classic bikes</li>
+        <li>There is only one year of data</li>
+        <li>There is no information on docking stations, and capacity</li>
+    </ul>
+    <br>
+  <p id="title_3"><b>Solutions:</b></p>
+     <p id="par_7">
+        I propose three solutions involving locations, assets, and services.  The below 6 charts were created in R taking into regard color blind friendly palettes.
+     </p>
+     <br>
+     <p id="par_8">
+        The two charts below show the top 5 and bottom 5 stations by bike type for both memberships.  Streeter Dr and Grand Ave are by far the most trafficked start and stop location followed by Michigan Ave & Oak St, Clark St & Elm St, Theater on the Lake, and Millennium Park.  Interestingly, all the top spots except for Clark St & Elm St are located at parks.  Increasing the number of docking stations at these spots might increase the number of memberships.  Another suggestion would be to have member only lockers at some locations.
+     </p>
+     <br>
+     <div id = "Start_Station">
+        <img src="https://github.com/Kronos19/Case-Study-1-Google-Cert/blob/main/Code/Data/Plots/Final/Start%20Station%20Ride%20Count%20-%20Final.png?raw=true" alt="Start_Station_Ride_Count">
+        <!-- make pictures centered with CSS -->
+        <img src="https://github.com/Kronos19/Case-Study-1-Google-Cert/blob/main/Code/Data/Plots/Final/End%20Station%20Ride%20Count%20-%20Final.png?raw=true" alt="End_Station_Ride_Count">
+     </div>
+     <br>
+     <p id="par_9">
+        The information on average rides times holds some interesting trends.  Casual members spend double the time biking each day of the week and by month.  Since we only have one year of data and memberships are for some length of time, memberships are more consistent.   One suggestion I could make based on this data is to have lighter framed bicycles offered to members, with more speeds to cater to the casual user experience.  
+     </p>
+     <br>
+     <p id="par_10">
+        The information on average rides times holds some interesting trends.  Casual members spend double the time biking each day of the week and by month.  Since we only have one year of data and memberships are for some length of time, memberships are more consistent.   One suggestion I could make based on this data is to have lighter framed bicycles offered to members, with more speeds to cater to the casual user experience.
+     </p>
+     <br>
+     <div id="AVG Dur We">
+        <img src="https://github.com/Kronos19/Case-Study-1-Google-Cert/blob/main/Code/Data/Plots/Final/Average%20Ride%20Duration%20by%20Day%20of%20Week%20-%20Final.png?raw=true" alt="AVG_Duration_Week">
+     </div>
+     <br>
+     <div>
+        <img src="https://github.com/Kronos19/Case-Study-1-Google-Cert/blob/main/Code/Data/Plots/Final/Average%20Ride%20Duration%20by%20Month%20-%20Final.png?raw=true" alt="AVG_Duration_Month">
+     </div>
+     <br>
+     <div>
+        <img src="https://github.com/Kronos19/Case-Study-1-Google-Cert/blob/main/Code/Data/Plots/Final/Average%20Ride%20Duration%20by%20Day%20of%20Week%20and%20Type%20-%20Final.png?raw=true" alt="AVG_Duration_Week_Type">
+     </div>
+     <br>
+     <div>
+        <img src="https://github.com/Kronos19/Case-Study-1-Google-Cert/blob/main/Code/Data/Plots/Final/Average%20Ride%20Duration%20by%20Day%20of%20Month%20and%20Type-%20Final.png?raw=true" alt="AVG_Duration_Month_Type">
+     </div>
+     <br>
+     <p id="par_11">
+        Casual riders ride more on weekends than members, while members ride more during the week. Casual riders also are most active during the summer months.  There are two gaps in data for classic bikes and electric bikes.  Classic bikes are not in use during the fall this year.  From spring to end of summer there is no member usage of docked bikes.  I believe having services that cater to an outdoor setting can be useful during warmer seasons.  Some idea to consider would be hosting cycling events like or races, or classes on biking.
+     </p>
+     <br>
+     <div>
+         <img src="https://github.com/Kronos19/Case-Study-1-Google-Cert/blob/main/Code/Data/Plots/Final/Ride%20Count%20by%20Day%20of%20Week%20-%20Final.png?raw=true" alt="Ride_Count_Week">
+     </div>
+     <br>
+     <div>
+         <img src="https://github.com/Kronos19/Case-Study-1-Google-Cert/blob/main/Code/Data/Plots/Final/Ride%20Count%20by%20Month%20-%20Final.png?raw=true" alt="Ride_Count_Month">
+     </div>
+     <br>
+  <p id="title_4"><b>Conclusion:</b></p>
+     <br>
+     <p id="par_12">
+        To maximize membership requires understanding users and their needs.  Two thirds of riders are casual.  The bicycle industry is changing quickly with competition from electric scooters.  Cyclistic can stand out as a quality service not just for commuters but also for leisure riders, by expanding docking station capacity, updating their fleet of bikes for leisure use, providing engaging activities, and engaging in thoughtful community awareness. This will increase the membership base beyond a commuter base and understand the needs of our casual user base.
+     </p>
+     <br>
+  <p id="title_5"><b>Data:</b></p>
+     <br>
+     <p id="par_13">
+        https://divvy-tripdata.s3.amazonaws.com/index.html
+     </p>
+     <br>
+
+</body>
+
+</html>
